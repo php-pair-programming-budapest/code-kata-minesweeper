@@ -1,7 +1,80 @@
-kata/php
+PHP coding kata
 ========
 
-PHP skeleton for doing coding katas
+Minesweeper
+-----------------------------------
+
+#### Problem Description
+
+Have you ever played Minesweeper? It's a cute little game which comes within a certain Operating System whose name we can't really remember. Well, the goal of the game is to find all the mines within an MxN field. To help you, the game shows a number in a square which tells you how many mines there are adjacent to that square. For instance, take the following 4x4 field with 2 mines (which are represented by an * character):
+
+```
+*...
+....
+.*..
+....
+```
+
+The same field including the hint numbers described above would look like this:
+
+```
+*100
+2210
+1*10
+1110
+```
+
+**You should write a program that takes input as follows:**
+
+The input will consist of an arbitrary number of fields. The first line of each field contains two integers n and m (0 < n,m <= 100) which stands for the number of lines and columns of the field respectively. The next n lines contains exactly m characters and represent the field. Each safe square is represented by an "." character (without the quotes) and each mine square is represented by an "*" character (also without the quotes). The first field line where n = m = 0 represents the end of input and should not be processed.
+
+**Your program should produce output as follows:**
+
+For each field, you must print the following message in a line alone:
+
+Field #x:
+
+Where x stands for the number of the field (starting from 1). The next n lines should contain the field with the "." characters replaced by the number of adjacent mines to that square. There must be an empty line between field outputs.
+
+#### Clues
+
+As you may have already noticed, each square may have at most 8 adjacent squares.
+
+#### Suggested Test Cases
+
+This is the acceptance test input:
+
+```
+4 4
+*...
+....
+.*..
+....
+3 5
+**...
+.....
+.*...
+0 0
+```
+
+and output:
+
+```
+Field #1:
+*100
+2210
+1*10
+1110
+
+Field #2:
+**100
+33200
+1*100
+```
+
+[Original description here](http://codingdojo.org/cgi-bin/index.pl?KataMinesweeper)
+
+What is a kata?
 -----------------------------------
 
 *Code Kata* is a term coined by Dave Thomas, co-author of the book
@@ -10,47 +83,10 @@ in the martial arts. A code kata is an exercise in programming which
 helps a programmer hone their skills through practice and repetition.
 As of October 2011, Dave Thomas has published 21 different katas.
 
-You can find some to start practicing [here](http://codingdojo.org/cgi-bin/index.pl?KataCatalogue).
-
 When you do programming katas, you use TDD. That's why I have included
 PHPUnit, Mockery, PHPSpec and Prophecy as composer dependencies. Choose
 the testing framework you feel more comfortable (or play with both).
 
-Practicing a kata
-=================
+-----------------------------------
 
-Let's imagine you want to practice "Bowling game kata". Details about
-this kata can be found [here](http://codingdojo.org/cgi-bin/wiki.pl?KataBowling).
-
-You will need composer.
-
-    curl -sS https://getcomposer.org/installer | php
-
-Then, use "create-project" command to clone this project as a template
-and create a new one in your computer.
-
-    php composer.phar create-project kata/php bowling-kata dev-master
-
-Then add your classes to 'src/Kata' and your test cases to
-'src/Kata/Tests' and run 'php bin/phpunit' to run your tests.
-
-    php bin/phpunit
-
-TestCase examples
-=================
-
-If you run 'php bin/phpunit' you will see the following output.
-
-    PHPUnit 3.8-gc4f2bcd by Sebastian Bergmann.
-    
-    Configuration read from /Users/carlosbuenosvinos/Documents/Web/bowling/phpunit.xml
-    
-    ...
-    
-    Time: 91 ms, Memory: 1.75Mb
-    OK (3 tests, 3 assertions)
-
-That's because you will find one class and its TestCase in the project
-in order to help you. You can delete them.
-
-Adder is a class that adds two numbers and AdderTest tests that.
+Skeleton by [@carlosbuenosvinos](https://github.com/carlosbuenosvinos/php-kata)
